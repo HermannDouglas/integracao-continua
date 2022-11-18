@@ -21,6 +21,7 @@ jobs:
         working-directory: back-end/
         run: mvn --activate-profiles prod test
   package:
+    needs: test
     runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v3
