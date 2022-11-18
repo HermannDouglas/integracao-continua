@@ -17,7 +17,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-      - name: Compilation, Test
+      - name: Compilacao, Test
         working-directory: back-end/
         run: mvn --activate-profiles prod test
   package:
@@ -29,7 +29,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-      - name: Compilation, Package
+      - name: Compilacao, Package
         working-directory: back-end/
         run: mvn --activate-profiles prod -DskipTests package
 
