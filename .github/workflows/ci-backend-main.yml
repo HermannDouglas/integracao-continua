@@ -6,6 +6,9 @@ on:
       - 'main'
     paths:
       - 'back-end/**'
+  pull_request:
+    paths:
+      - 'back-end/**'
   
 jobs:
   test:
@@ -17,7 +20,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-      - name: Compilacao, Test
+      - name: Compilation, Test
         working-directory: back-end/
         run: mvn --activate-profiles prod test
   package:
@@ -30,7 +33,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'zulu'
-      - name: Compilacao, Package
+      - name: Compilation, Package
         working-directory: back-end/
         run: mvn --activate-profiles prod -DskipTests package
 
