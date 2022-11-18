@@ -1,6 +1,6 @@
 name: CI Back-end
 
-on: 
+on:
   push:
     branches:
       - 'main'
@@ -36,4 +36,3 @@ jobs:
       - name: Compilation, Package
         working-directory: back-end/
         run: mvn --activate-profiles prod -DskipTests package
-
