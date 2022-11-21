@@ -35,3 +35,22 @@ jobs:
       - name: Compilation, Package
         working-directory: front-end/
         run: npm run build --prod
+
+  deploy:
+      needs: package
+      runs-on: ubuntu-latest
+      name: Deploy Railsway
+      steps: 
+        - uses: actions/checkout@v3
+        - name: Set up node
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - name: Instalação do cliente Railway
+          run: npm install -g @railway/cli
+        - name: Deploy
+          working-directory: front-end/dist/sgcmapp
+          run: railway up --detach --service sgcm-hermann-frontend
+          env:
+            RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
