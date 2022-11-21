@@ -8,7 +8,7 @@ on:
       - 'front-end/**'
   pull_request:
     paths:
-      -'front-end/**'
+      - 'front-end/**'
   workflow_call:
 
 jobs:
