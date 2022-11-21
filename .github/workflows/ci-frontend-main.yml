@@ -37,7 +37,7 @@ jobs:
         run: npm run build --prod
 
   deploy:
-      needs: package
+      needs: test
       runs-on: ubuntu-latest
       name: Deploy Railsway
       steps: 
